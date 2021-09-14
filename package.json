@@ -9,13 +9,10 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
-    "test": "env-cmd -f ./config/test.env jest --watch"
+    "test": "env-cmd -f ./config/test.env jest --watch --resolver='./temporary-resolver.js'"
   },
   "jest": {
-    "testEnvironment": "node",
-    "moduleNameMapper": {
-      "^jose-node-cjs-runtime/(.*)$": "jose-node-cjs-runtime/dist/node/cjs/$1"
-    }
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -33,6 +30,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
+    "enhanced-resolve": "^5.8.2",
     "env-cmd": "^10.1.0",
     "jest": "^27.2.0",
     "nodemon": "^2.0.12",
