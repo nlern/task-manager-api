@@ -12,16 +12,7 @@
     "test": "env-cmd -f ./config/test.env jest --watch"
   },
   "jest": {
-    "testEnvironment": "node",
-    "roots": [
-      "<rootDir>"
-    ],
-    "modulePaths": [
-      "<rootDir>"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ]
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
