@@ -13,8 +13,13 @@ router.post('/users', async (req, res) => {
   try {
     await user.save();
     sendWelcomeMail(user.email, user.name);
-    const token = await user.generateAuthToken();
-    res.status(201).send({ user, token });
+    try {
+      const token = await user.generateAuthToken();
+      res.status(201).send({ user, token });
+    } catch (e) {
+      console.log(e);
+      return res.status(500).send();
+    }
   } catch (e) {
     res.status(400).send(e);
   }
