@@ -12,7 +12,10 @@
     "test": "env-cmd -f ./config/test.env jest --watch"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^jose-node-cjs-runtime/(.*)$": "jose-node-cjs-runtime/dist/node/cjs/$1"
+    }
   },
   "keywords": [],
   "author": "",
