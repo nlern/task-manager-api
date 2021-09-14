@@ -12,7 +12,7 @@ router.post('/tasks', auth, async (req, res) => {
     await task.save();
     res.status(201).send(task);
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send();
   }
 });
 
@@ -87,7 +87,7 @@ router.patch('/tasks/:id', auth, async (req, res) => {
 
     res.send(task);
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send();
   }
 });
 

@@ -17,11 +17,10 @@ router.post('/users', async (req, res) => {
       const token = await user.generateAuthToken();
       res.status(201).send({ user, token });
     } catch (e) {
-      console.log(e);
       return res.status(500).send();
     }
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send();
   }
 });
 
@@ -85,7 +84,7 @@ router.patch('/users/me', auth, async (req, res) => {
 
     res.send(user);
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send();
   }
 });
 
